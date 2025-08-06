@@ -24,21 +24,6 @@
             #binding-cells = <0>;
             button = <1>; // Right click
         };
-        
-        // Scroll behaviors for encoder
-        scroll_up: behavior_mouse_scroll {
-            compatible = "zmk,behavior-mouse-scroll";
-            #binding-cells = <0>;
-            direction = <1>; // Up
-            distance = <1>;
-        };
-        
-        scroll_down: behavior_mouse_scroll {
-            compatible = "zmk,behavior-mouse-scroll";
-            #binding-cells = <0>;
-            direction = <0>; // Down
-            distance = <1>;
-        };
     };
 
     keymap {
@@ -56,16 +41,6 @@
             bindings = <
                 &bt BT_SEL 0 &bt BT_SEL 1
             >;
-        };
-    };
-    
-    sensors {
-        compatible = "zmk,keymap-sensors";
-        
-        sensor0 {
-            compatible = "zmk,keymap-sensor";
-            triggers = <1 2>;
-            bindings = <&scroll_up &scroll_down>;
         };
     };
 }; 
