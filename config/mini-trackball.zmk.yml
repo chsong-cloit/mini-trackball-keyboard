@@ -2,7 +2,9 @@ file_format: "1"
 id: mini-trackball
 name: Mini Trackball
 type: shield
-requires: [nice_nano]
+url: https://github.com/chsong-cloit/mini-trackball-keyboard
+requires: [nice_nano_v2]
 features:
   - Keys
   - Mouse
+  - Trackball
