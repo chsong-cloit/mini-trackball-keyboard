@@ -4,17 +4,9 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: nice
       url-base: https://github.com/noroadsleft
-    - name: petejohanson
-      url-base: https://github.com/petejohanson
 
   projects:
     - name: zmk
       remote: zmk
       revision: main
       import: app/west.yml
-      path: zephyr
-    - name: nice_nano
-      remote: nice
-      revision: main
-      path: boards/arm/nice_nano
-      import: boards/arm/nice_nano/nice_nano.dtsi
