@@ -62,11 +62,6 @@
     
     sensors {
         compatible = "zmk,keymap-sensors";
-        
-        sensor0 {
-            compatible = "zmk,keymap-sensor";
-            triggers = <1 2>;
-            bindings = <&scroll_up &scroll_down>;
-        };
+        sensors = <&left_encoder>;
     };
 }; 
