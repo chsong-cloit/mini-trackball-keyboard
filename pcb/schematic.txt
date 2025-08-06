@@ -1,0 +1,86 @@
+# Mini Trackball Keyboard - Schematic Design Guide
+
+## MCU (nRF52840) 연결
+
+### Power Supply
+- VDD -> 3.3V
+- VSS -> GND
+- VBAT -> Battery voltage (3.7V)
+- VDDH -> 3.3V
+
+### Crystal
+- XTAL1 -> 32MHz crystal
+- XTAL2 -> 32MHz crystal
+- Load capacitors: 2x 12pF
+
+### USB
+- D+ -> USB-C connector
+- D- -> USB-C connector
+- VBUS -> USB-C connector
+
+## PWM3610 Trackball 연결
+
+### SPI Interface
+- CS -> GPIO P0.04
+- SCK -> SPI0_SCK
+- MOSI -> SPI0_MOSI
+- MISO -> SPI0_MISO
+- DR -> GPIO P0.05 (Data Ready)
+- MOTION -> GPIO P0.06 (Motion detection)
+
+### Power
+- VDD -> 3.3V
+- VSS -> GND
+
+## EC11 Encoder 연결
+
+### Signal Pins
+- A -> GPIO P0.07
+- B -> GPIO P0.08
+- SW -> GPIO P0.09 (Push button)
+
+### Power
+- VCC -> 3.3V
+- GND -> GND
+
+## Mechanical Switches
+
+### Switch 1
+- One terminal -> GPIO P0.10
+- Other terminal -> GND
+
+### Switch 2
+- One terminal -> GPIO P0.11
+- Other terminal -> GND
+
+## RGB LEDs (WS2812B)
+
+### Data Chain
+- DIN -> GPIO P0.12
+- VDD -> 3.3V
+- GND -> GND
+
+## Battery Management
+
+### Charging Circuit
+- Battery + -> Charger IC
+- Battery - -> GND
+- USB VBUS -> Charger IC
+- Charger output -> 3.3V regulator
+
+### Protection
+- Battery protection IC
+- Reverse polarity protection
+- Overcharge protection
+
+## Decoupling Capacitors
+
+- 100nF ceramic caps near each IC
+- 10uF electrolytic caps for power filtering
+- 1uF ceramic caps for sensitive circuits
+
+## Pull-up Resistors
+
+- 10k pull-ups for switches
+- 4.7k pull-ups for I2C lines
+- 10k pull-ups for encoder signals 

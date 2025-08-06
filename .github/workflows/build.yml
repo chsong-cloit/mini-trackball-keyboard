@@ -1,0 +1,29 @@
+name: Build Firmware
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: recursive
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build Firmware
+        run: |
+          west init -l config
+          west update
+          west zephyr-export
+          west build -s zmk/app -b nice_nano -- -DZMK_CONFIG="$(pwd)/config"
+
+      - name: Upload Firmware
+        uses: actions/upload-artifact@v3
+        with:
+          name: firmware
+          path: build/zephyr/zmk.uf2

@@ -1,0 +1,15 @@
+Component,Value,Footprint,Quantity,Notes
+MCU,Nice!nano v2,Nice!nano,1,Bluetooth MCU with USB-C
+Crystal,32MHz,HC-49,1,External crystal (built-in)
+Resistor,10k,0603,4,Pull-up resistors
+Resistor,4.7k,0603,2,I2C pull-up
+Capacitor,100nF,0603,6,Decoupling caps
+Capacitor,10uF,0603,2,Power filtering
+Capacitor,1uF,0603,2,Power filtering
+LED,WS2812B,WS2812B,3,RGB backlight
+Switch,MX,Hotswap,2,Mechanical switches
+Trackball,PWM3610,PWM3610,1,Optical trackball
+Encoder,EC11,EC11,1,Rotary encoder
+Battery,3.7V LiPo,LiPo,1,Rechargeable battery
+Connector,USB-C,USB-C,1,Power and programming (built-in)
+Connector,JST 2-pin,JST 2-pin,1,Battery connector 
