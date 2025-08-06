@@ -1,13 +1,8 @@
-# Mini Trackball Keyboard Configuration
-# Hardware: PWM3610 trackball, EC11 encoder, 2x switches
-# MCU: Nice!nano v2
-
-# Board configuration
-CONFIG_ZMK_KEYBOARD_NAME="Mini Trackball"
-
-# Enable mouse support
-CONFIG_ZMK_MOUSE=y
-
-# Power management
-CONFIG_ZMK_SLEEP=y
-CONFIG_ZMK_IDLE_SLEEP_TIMEOUT=900000 
+file_format: "1"
+id: mini-trackball
+name: Mini Trackball
+type: shield
+requires: [nice_nano]
+features:
+  - Keys
+  - Mouse

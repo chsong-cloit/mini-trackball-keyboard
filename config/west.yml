@@ -1,12 +1,16 @@
 manifest:
   remotes:
-    - name: zmk
+    - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: nice
-      url-base: https://github.com/noroadsleft
-
+    - name: inorichi
+      url-base: https://github.com/inorichi
   projects:
     - name: zmk
-      remote: zmk
+      remote: zmkfirmware
       revision: main
       import: app/west.yml
+    - name: zmk-pmw3610-driver
+      remote: inorichi
+      revision: main
+  self:
+    path: config
