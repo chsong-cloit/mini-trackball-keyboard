@@ -7,9 +7,6 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/rgb.h>
-#include <dt-bindings/zmk/ext_power.h>
-#include <dt-bindings/zmk/mouse.h>
 
 / {
     behaviors {
@@ -24,21 +21,6 @@
             compatible = "zmk,behavior-mouse-button-press";
             #binding-cells = <0>;
             button = <1>; // Right click
-        };
-        
-        // Scroll behaviors for encoder
-        scroll_up: behavior_mouse_scroll {
-            compatible = "zmk,behavior-mouse-scroll";
-            #binding-cells = <0>;
-            direction = <1>; // Up
-            distance = <1>;
-        };
-        
-        scroll_down: behavior_mouse_scroll {
-            compatible = "zmk,behavior-mouse-scroll";
-            #binding-cells = <0>;
-            direction = <0>; // Down
-            distance = <1>;
         };
     };
 
@@ -58,10 +40,5 @@
                 &bt BT_SEL 0 &bt BT_SEL 1
             >;
         };
-    };
-    
-    sensors {
-        compatible = "zmk,keymap-sensors";
-        sensors = <&left_encoder>;
     };
 }; 
